@@ -3,6 +3,9 @@
 
     {% if user.is_authenticated %}
       <li class="nav_link">
+        <a href="{% url 'users:profile' %}">Profile</a>
+      </li>
+      <li class="nav_link">
         <a href="{% url 'users:logout' %}">Logout</a>
       </li>
     {% else %}
