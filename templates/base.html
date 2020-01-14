@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,16 +9,20 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>{% block page_title %}{% endblock page_title %}| banggu bnb</title>
   </head>
-  <body class="text-gray-800 mt-24 font-light">
+  <body class="text-gray-800 mt-24 font-light bg-indigo-100">
     {% include "partials/messages.html" %}
-    <header class="container max-w-full inset-0 flex items-center justify-between px-6 h-20 borde-br border-gray-400 fixed bg-white">
-      <div clas="flex items-center">
+    <header class="container max-w-full inset-0 flex items-center justify-between px-6 h-20 border-br border-gray-400 fixed bg-white">
+      <div class="flex items-center">
         <a href="{% url "core:home" %}" class="mr-6">
-          <img class="w-10" src="{% static 'image/bangulogo.jpg' %}">
+          <img class="w-20 h-20" src="{% static 'image/bangguimage.png' %}">
         </a>
         {% block search-bar %}
           <form method="get" action="{% url 'rooms:search' %}" class="w-9/12">
-            <input class="search-box border px-5 w-full font-medium text-gray-900 placeholder-gray-600 py-3 rounded-sm w-64 shadow-md hover:shadow-lg focus:outline-none" name="city" placeholder="Search by City" />
+            <input 
+              class="search-box border px-5 w-full font-medium text-gray-900 placeholder-gray-600 py-3 rounded-lg w-64 shadow-md hover:shadow-lg focus:outline-none"
+              name="city"
+              placeholder={% trans "Search by City" %}
+            />
           </form>
         {% endblock search-bar %}
       </div>
