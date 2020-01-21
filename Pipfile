@@ -7,6 +7,7 @@ verify_ssl = true
 pylint = "*"
 flake8 = "*"
 black = "*"
+awsebcli = "*"
 
 [packages]
 pillow = "*"
@@ -17,6 +18,7 @@ requests = "*"
 npm = "*"
 node-js = "*"
 django = "==2.2.5"
+pipenv-to-requirements = "*"
 
 [requires]
 python_version = "3.8"
